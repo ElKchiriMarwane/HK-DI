@@ -11,20 +11,24 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserComponent } from './components/user/user.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ConnectComponent } from './components/connect/connect.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    UserComponent
+    UserComponent,
+    ConnectComponent
   ],
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    AppRoutingModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

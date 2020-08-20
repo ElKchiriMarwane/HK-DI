@@ -12,7 +12,7 @@ import User from './../User';
 })
 export class AuthService {
   user$: Observable<User>;
-  constructor(public afAuth: AngularFireAuth, public afBase: AngularFirestore) {
+  constructor(public afAuth: AngularFireAuth, public afBase: AngularFirestore, private router: Router) {
     this.user$ = this.afAuth.authState.pipe(
       switchMap(user => {
         if(user) {
@@ -29,14 +29,24 @@ export class AuthService {
       const credential = await this.afAuth.signInWithPopup(provider);
       return this.updateUserData(credential.user);
     }
-
-    async signOut(){
-      await this.afAuth.signOut();
-      // return this.router.navigate(['/']);
-      return null;
+    async emailLogIn({email, password}) {
+    const credential = await this.afAuth.signInWithEmailAndPassword(email, password);
     }
 
-    private updateUserData({uid, email, displayName, photoURL} : User){
+    async emailSignIn({mail, displayName, photoURL, password}){
+      console.log(mail)
+      const credential = await this.afAuth.createUserWithEmailAndPassword(mail, password);
+      const uid = credential.user.uid;
+      const email = credential.user.email;
+      console.log(email, uid)
+      return this.updateUserData({uid, email, displayName, photoURL})
+    }
+    async signOut(){
+      await this.afAuth.signOut();
+      return this.router.navigate(['/connect']);
+    }
+
+    private updateUserData({uid, email, displayName, photoURL}: User){
       const userRef: AngularFirestoreDocument<User> = this.afBase.doc(`users/${uid}`);
       const data: User = {
         uid,
@@ -44,7 +54,7 @@ export class AuthService {
         displayName,
         photoURL
       }
-      return userRef.set(data, {merge: true})
+      return userRef.set(data, {merge: true});
 
     }
 }

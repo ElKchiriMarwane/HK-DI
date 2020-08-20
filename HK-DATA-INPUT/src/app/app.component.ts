@@ -9,5 +9,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'HK-DATA-INPUT';
 
-  constructor(private auth: AuthService){}
+  constructor(public auth: AuthService){}
 }

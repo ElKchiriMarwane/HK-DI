@@ -1,0 +1,7 @@
+<div *ngIf="auth.user$ | async; else login">
+{{goToUser()}}
+</div>
+<ng-template #login>
+  <app-login *ngIf="toggle" [toggle]='toggle' (toggleChanged)='toggleChangedHandler($event)'></app-login>
+  <app-register *ngIf="!toggle" [toggle]='toggle' (toggleChanged)='toggleChangedHandler($event)'></app-register>
+</ng-template>
