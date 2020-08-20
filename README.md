@@ -14,12 +14,13 @@ ng serve -o
 ### Enjoy!
 
 ## Objectives
-* [ ] login
+* [x] Login
+* [x] Register
 * [ ] Categories
 * [ ] Articles
 * [ ] About
 * [ ] Contact
-* [ ] User
-* [ ] Firebase Service
-* [ ] Auth
+* [x] User
+* [x] Firebase Service
+* [x] Auth
 * [ ] Storage
