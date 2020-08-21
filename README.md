@@ -16,7 +16,7 @@ ng serve -o
 ## Objectives
 * [x] Login
 * [x] Register
-* [ ] Categories
+* [x] Categories
 * [ ] Articles
 * [ ] About
 * [ ] Contact

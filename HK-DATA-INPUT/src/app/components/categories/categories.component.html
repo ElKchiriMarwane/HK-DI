@@ -1,0 +1,12 @@
+
+<div class="container">
+  <h1>Categories</h1>
+  <div class="content d-sm-flex">
+    <div class="card" style="width: 18rem;" *ngFor="let category of categories" >
+      <div class="card-body" (click)="goToCategory(category.category_id)">
+        <h5 class="card-title">{{category.name}}</h5>
+        <a href="#" *ngFor="let article of category.article_ids" class="card-link">{{article}}</a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -6,13 +6,16 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
-
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UserComponent } from './components/user/user.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ConnectComponent } from './components/connect/connect.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +23,13 @@ import { ConnectComponent } from './components/connect/connect.component';
     LoginComponent,
     RegisterComponent,
     UserComponent,
-    ConnectComponent
+    ConnectComponent,
+    CategoriesComponent,
+    NavbarComponent,
+    CategoryComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,

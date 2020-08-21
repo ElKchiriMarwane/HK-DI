@@ -2,6 +2,9 @@
 {{goToUser()}}
 </div>
 <ng-template #login>
+  <div class="container">
   <app-login *ngIf="toggle" [toggle]='toggle' (toggleChanged)='toggleChangedHandler($event)'></app-login>
   <app-register *ngIf="!toggle" [toggle]='toggle' (toggleChanged)='toggleChangedHandler($event)'></app-register>
+  </div>
+
 </ng-template>
