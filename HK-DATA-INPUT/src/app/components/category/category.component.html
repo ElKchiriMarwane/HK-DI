@@ -7,7 +7,7 @@
   <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" [(ngModel)]="category['name']"
     aria-describedby="button-addon2">
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)='save()'>Save</button>
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)='save(file)'>Save</button>
   </div>
 </div>
 <div class="input-group mb-3">
@@ -15,10 +15,12 @@
     <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
   </div>
   <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+    <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" #file>
     <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
   </div>
+
 </div>
+  <img src="{{image}}" alt="">
 <h1>Articles</h1>
 <div class="card"*ngFor="let article of category['article_ids']">
   <div class="card-body">
