@@ -23,4 +23,4 @@ ng serve -o
 * [x] User
 * [x] Firebase Service
 * [x] Auth
-* [ ] Storage
+* [x] Storage
