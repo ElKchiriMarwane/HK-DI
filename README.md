@@ -17,7 +17,7 @@ ng serve -o
 * [x] Login
 * [x] Register
 * [x] Categories
-* [ ] Articles
+* [x] Articles
 * [ ] About
 * [ ] Contact
 * [x] User

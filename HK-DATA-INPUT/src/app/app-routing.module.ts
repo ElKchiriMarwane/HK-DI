@@ -1,3 +1,4 @@
+import { ArticleComponent } from './components/article/article.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { UserComponent } from './components/user/user.component';
 import { NgModule } from '@angular/core';
@@ -11,7 +12,8 @@ const routes: Routes = [
   { path: 'connect', component: ConnectComponent },
   { path: 'user', component: UserComponent },
   { path: 'categories', component: CategoriesComponent},
-  { path: 'category/:id', component: CategoryComponent }
+  { path: 'category/:id', component: CategoryComponent },
+  { path: 'article/:id', component: ArticleComponent }
 ]
 
 @NgModule({

@@ -16,6 +16,7 @@ import { ConnectComponent } from './components/connect/connect.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CategoryComponent } from './components/category/category.component';
+import { ArticleComponent } from './components/article/article.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CategoryComponent } from './components/category/category.component';
     ConnectComponent,
     CategoriesComponent,
     NavbarComponent,
-    CategoryComponent
+    CategoryComponent,
+    ArticleComponent
   ],
   imports: [
     FormsModule,
